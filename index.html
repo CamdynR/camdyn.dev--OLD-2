@@ -10,50 +10,32 @@
   <link rel="shortcut icon" href="assets/icons/heart.png" type="image/x-icon" />
 
   <style>
-    body,
-    html,
-    picture {
+    body, html {
       height: 100%;
       margin: 0;
       padding: 0;
       width: 100%;
     }
 
-    picture {
+    body {
       align-items: center;
-      background-color: white;
+      background-image: url('assets/images/camdyn-1500.webp');
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
+      background-size: 95% auto;
       display: grid;
-      grid-template-areas: 'img';
       justify-items: center;
-      margin-top: -80px;
+      margin: 0 auto;
+      max-width: 950px;
     }
 
-    img {
-      margin-top: 0;
-      grid-area: img;
-      height: 60%;
-      width: auto;
-    }
-
-    @media only screen and (max-width: 1000px) {
-      picture {
-        margin-top: -40px;
-      }
-    }
-
-    @media only screen and (max-width: 700px) {
-      picture {
-        margin-top: 0px;
-      }
+    html {
+      background-color: white;
     }
   </style>
 </head>
 
 <body>
-  <picture>
-    <source srcset="assets/images/camdyn-800.webp" media="(max-width: 1000px)">
-    <img src="assets/images/camdyn-1500.webp" alt="Portrait of me">
-  </picture>
 </body>
 
 </html>
