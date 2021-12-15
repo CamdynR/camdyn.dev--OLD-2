@@ -11,38 +11,45 @@
 
   <style>
     body,
-    html {
+    html,
+    picture {
       height: 100%;
       margin: 0;
       padding: 0;
       width: 100%;
     }
 
-    body {
+    picture {
       align-items: center;
       background-color: white;
       display: grid;
+      grid-template-areas: 'img';
       justify-items: center;
+      margin-top: -80px;
     }
 
     img {
-      height: 100%;
+      margin-top: 0;
+      grid-area: img;
+      height: 60%;
+      width: auto;
     }
 
-    picture {
-      height: 60%;
+    @media only screen and (max-width: 1000px) {
+      picture {
+        margin-top: -40px;
+      }
     }
 
     @media only screen and (max-width: 700px) {
-      img {
-        height: 60%;
+      picture {
+        margin-top: 0px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- See you soon! -->
   <picture>
     <source srcset="assets/images/camdyn-500.webp" media="(max-width: 700px)">
     <source srcset="assets/images/camdyn-800.webp" media="(max-width: 1000px)">
