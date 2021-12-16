@@ -1,0 +1,123 @@
+/* style.css */
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(-45deg, #cf4d25, #b41d57, #1180a8, #0d9978);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+body.modal {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+}
+
+body.modal #tokenModal {
+  display: grid !important;
+}
+
+body.modal > *:not(#tokenModal) {
+  display: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#tokenModal {
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  display: none;
+  height: 325px;
+  justify-items: center;
+  grid-template-rows: 35% 65%;
+  width: 300px;
+}
+
+#tokenModal .highlight {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  mix-blend-mode: screen;
+  padding: 0 6px 3px;
+}
+
+#tokenModal > p {
+  align-self: start;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+#tokenModal input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.175);
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+#tokenModal input[type="text"].incorrect {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+#tokenModal input[type="text"].incorrect:focus {
+  background-color: rgba(255, 255, 255, 0.175);
+}
+
+#tokenModal input[type="text"]:focus {
+  outline: none;
+}
+
+#tokenModal input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#tokenModal input[type="text"]:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+#tokenModal button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 0;
+  margin-top: 40px;
+  transition: 0.2s ease all;
+  width: 100%;
+}
+
+@media (hover: hover) {
+  #tokenModal button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: 0.2s ease all;
+  }
+}

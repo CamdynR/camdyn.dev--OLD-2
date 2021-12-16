@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellowtail Analytics</title>
+
+  <!-- Google Fonts - Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <!-- ZingChart -->
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="module"></script>
+</head>
+<body class="modal">
+  <div id="tokenModal">
+    <p>Enter a <span class="highlight">Key</span> & <span class="highlight">Value</span></p>
+    <form>
+      <input type="text" name="key" id="key" placeholder="Key"
+        onfocusin="this.placeholder = ''" onfocusout="this.placeholder = 'Key'" />
+      <input type="text" name="value" id="value" placeholder="Value"
+        onfocusin="this.placeholder = ''" onfocusout="this.placeholder = 'Value'" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <header>
+    <h1>Yellowtail Analytics</h1>
+  </header>
+  <div id='myChart'></div>
+</body>
+</html>
