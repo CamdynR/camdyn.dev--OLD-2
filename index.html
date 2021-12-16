@@ -19,6 +19,11 @@
       width: 100%;
     }
 
+    body {
+      overflow: hidden;
+      overscroll-behavior-y: none;
+    }
+
     picture {
       align-items: center;
       display: grid;
@@ -32,6 +37,7 @@
 
     img {
       height: 80vh;
+      user-select: none;
       width: auto;
     }
 
@@ -48,7 +54,7 @@
 <body>
   <picture>
     <source srcset="assets/images/camdyn-800.webp" media="(max-width: 600px)">
-    <img src="assets/images/camdyn-1500.webp" alt="Portrait of Camdyn">
+    <img src="assets/images/camdyn-1500.webp" alt="Portrait of Camdyn" draggable="false">
   </picture>
 </body>
 
