@@ -1,0 +1,202 @@
+/* global.css */
+
+/*** general ***/
+
+* {
+  font-family: 'Lora', serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+  overscroll-behavior-y: none;
+}
+
+/*** lightbulb ***/
+
+label[for="btn--theme"] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60px;
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  transition: background-image 0.2s ease-in-out, transform, 0.2s ease-in-out;
+  width: 36px;
+  z-index: 3;
+}
+
+label[for="btn--theme"]:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+  transition: transform, 0.2s ease-in-out;
+}
+
+#btn--theme {
+  height: 50px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  width: 30px;
+  z-index: 3;
+}
+
+#btn--theme:hover {
+  cursor: pointer;
+}
+
+#btn--theme:not(:checked) ~ #hero,
+#btn--theme:not(:checked) ~ #drawer {
+  background-image: url('../images/light/bg-tile-light.png');
+  background-color: white;
+  margin-left: 0px;
+}
+
+#btn--theme:not(:checked) ~ #drawer {
+  border-color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.8);
+  filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.25));
+}
+
+#btn--theme:not(:checked) ~ #drawer:hover {
+  filter: drop-shadow(0 -5px 15px rgba(0, 0, 0, 0.8));
+}
+
+#btn--theme:not(:checked) ~ #drawer nav p:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+}
+
+#btn--theme:checked ~ #hero,
+#btn--theme:checked ~ #drawer {
+  background-image: url('../images/dark/bg-tile-dark.png');
+  background-color: black;
+}
+
+#btn--theme:checked ~ #drawer {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+  filter: drop-shadow(0 -5px 5px rgba(255, 255, 255, 0.25));
+}
+
+#btn--theme:checked ~ #drawer:hover {
+  filter: drop-shadow(0 -5px 15px rgba(255, 255, 255, 0.8));
+}
+
+#btn--theme:checked ~ #drawer nav p:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+#btn--theme:not(:checked) ~ #hero > img.light {
+  opacity: 1;
+}
+
+#btn--theme:checked ~ #hero > img.dark {
+  opacity: 1;
+}
+
+#btn--theme:not(:checked) + label[for="btn--theme"] {
+  background-image: url('../icons/lightbulb-black.svg');
+}
+
+#btn--theme:checked + label[for="btn--theme"] {
+  background-image: url('../icons/lightbulb-white.svg');
+}
+
+/*** drawer ***/
+
+#drawer {
+  background-image: url('../images/dark/bg-tile-dark.png');
+  background-color: black;
+  bottom: calc(-100% + 100px);
+  height: 100%;
+  position: absolute;
+  transition: filter 0.2s ease-in-out, transform 0.3s ease-in-out, background-image 0.2s ease-in-out;
+  width: 100%;
+  z-index: 2;
+}
+
+#drawer:hover {
+  border-top: none;
+  cursor: pointer;
+  transform: translateY(-50px);
+  transition: filter 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#drawer.pulled-out {
+  border: none;
+  transform: translateY(calc(-100% + 100px));
+}
+
+#drawer.pulled-out:hover {
+  cursor: default;
+}
+
+#drawer nav {
+  align-items: center;
+  display: grid;
+  font-size: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#drawer nav:hover {
+  cursor: pointer;
+}
+
+#drawer nav p {
+  border-bottom: 2px solid transparent;
+  box-sizing: border-box;
+  padding-bottom: 3px;
+}
+
+/*** hero image ***/
+
+#hero {
+  align-items: center;
+  display: grid;
+  grid-template-areas: 'img';
+  height: calc(100% - 100px);
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: background-image 0.2s ease-in-out;
+  width: 100%;
+  z-index: 1;
+}
+
+#hero > * {
+  grid-area: img;
+}
+
+#hero > img {
+  height: 80vh;
+  margin-left: -5vw;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  user-select: none;
+  width: auto;
+}
+
+#hero > source {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  img {
+    height: auto;
+    margin-left: 5vw;
+    width: 95vw;
+  }
+}

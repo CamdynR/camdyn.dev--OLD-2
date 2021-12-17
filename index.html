@@ -9,53 +9,42 @@
   <!-- favicon -->
   <link rel="shortcut icon" href="assets/icons/heart.png" type="image/x-icon" />
 
-  <style>
-    body,
-    html,
-    picture {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
-    body {
-      overflow: hidden;
-      overscroll-behavior-y: none;
-    }
-
-    picture {
-      align-items: center;
-      display: grid;
-      grid-template-areas: 'img';
-      justify-items: center;
-    }
-
-    picture > * {
-      grid-area: img;
-    }
-
-    img {
-      height: 80vh;
-      user-select: none;
-      width: auto;
-    }
-
-    @media screen and (orientation: portrait) {
-      img {
-        height: auto;
-        margin-left: 5vw;
-        width: 95vw;
-      }
-    }
-  </style>
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="assets/styles/global.css">
 </head>
 
 <body>
-  <picture>
-    <source srcset="assets/images/camdyn-800.webp" media="(max-width: 600px)">
-    <img src="assets/images/camdyn-1500.webp" alt="camdyn.dev" draggable="false">
+  <input type="checkbox" id="btn--theme" />
+  <label for="btn--theme"></label>
+  <picture id="hero">
+    <!-- Light Theme Images -->
+    <source srcset="assets/images/light/camdyn-light-800.webp" media="(max-width: 600px)" class="light" />
+    <img src="assets/images/light/camdyn-light-1500.webp" alt="camdyn.dev" draggable="false" class="light" />
+    <!-- Dark Theme Images -->
+    <source srcset="assets/images/dark/camdyn-dark-800.webp" media="(max-width: 600px)" class="dark" />
+    <img src="assets/images/dark/camdyn-dark-1500.webp" alt="camdyn.dev" draggable="false" class="dark" />
   </picture>
+  <section id="drawer">
+    <nav>
+      <p role="link">about</p>
+      <p role="link">work</p>
+      <p role="link">projects</p>
+      <p role="link">curiosities</p>
+      <p role="link">contact</p>
+    </nav>
+  </section>
+  <script>
+    let nav = document.querySelector('#drawer nav');
+    let drawer = document.querySelector('#drawer');
+    nav.addEventListener('click', () => {
+      drawer.classList.toggle('pulled-out');
+    });
+  </script>
 </body>
 
 </html>
