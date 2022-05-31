@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebRTC Chat App</title>
-
-  <style>
-    * {
-      font-family: sans-serif;
-    }
-  </style>
+  <title>Document</title>
 </head>
 <body>
-  <h1>Simple WebRTC Chat App</h1>
+<?php
+  $path = $_SERVER["DOCUMENT_ROOT"];
+  $color = explode("/", $path);
+  print_r($color);
+?>
 </body>
 </html>
